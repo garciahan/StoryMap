@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Farmers Market In Portland</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--add required stylesheets-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin="">
+    <!--make sure you add bootstrap 3.3.7 rather than 4.0.0-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--leaflet css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css">
+    <!--animation-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../dist/storymap.2.3.css">
+
+    <!--add required libraries-->
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <!--leaflet-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js"></script>
+    <!--jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--boostrap-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--leaflet.ajax for asynchronously adding geojson data-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+    <!--story map plugin-->
+    <script src="../../storymap.2.3.js"></script>
+</head>
+<body>
+<body>
+<div id="storymap" class="container-fluid" >
+    <div class="row">
+        <div class="col-sm-6 col-md-8 storymap-map"></div>
+        <div class="col-sm-6 col-md-4 storymap-story">
+        <h2 class="page-header"> Portland Farmers Market<br/>
+          <section data-scene="scene1">
+            <h3>Portland Farmers Markets</h3>
+          </section>
+
+          <section data-scene="Market1">
+            <h3>Hillsdale Farmers Market</h3>
+          </section>
+
+          <section data-scene="Market2">
+            <h3>Hillsdale Farmers Market</h3>
+          </section>
+
+          <section data-scene="Market3">
+            <h3>Hollywood Farmers Market</h3>
+          </section>
+
+          <section data-scene="Market4">
+            <h3>Montavilla Farmers Marke</h3>
+          </section>
+
+          <section data-scene="Market5">
+            <h3>Moreland Farmers Market</h3>
+          </section>
+
+          <section data-scene="Market6">
+            <h3>People's Farmers Market</h3>
+          </section>
+
+          <section data-scene="Market7">
+            <h3>Portland Farmers Market at Portland State University</h3>
+          </section>
+
+          <section data-scene="Market8">
+            <h3>Lents International Farmers Market</h3>
+          </section>
+
+          <section data-scene="Market9">
+            <h3>Lloyd Farmers Market</h3>
+          </section>
+
+          <section data-scene="Market10">
+            <h3>OHSU Farmers Market</h3>
+          </section>
+
+          <section data-scene="Market11">
+            <h3>King Portland Farmers Market</h3>
+          </section>
+
+          <section data-scene="Market12">
+            <h3>St Johns Farmers Market</h3>
+          </section>
+
+          <section data-scene="Market13">
+            <h3>Portland Farmers Market at Pioneer Courthouse Square</h3>
+          </section>
+
+          <section data-scene="Market14">
+            <h3>Cully Farmers Market</h3>
+          </section>
+
+          <section data-scene="Market15">
+            <h3>"Woodstock Farmers Market</h3>
+          </section>
+
+          <section data-scene="Market16">
+            <h3>South Waterfront Farmers Market</h3>
+          </section>
+
+          <section data-scene="Market17">
+            <h3>Kenton Portland Farmers Market</h3>
+          </section>
+
+          <section data-scene="Market18">
+            <h3>Portland Farmers Market at Shemanski Park</h3>
+          </section>
+
+          <section data-scene="Market19">
+            <h3>Woodlawn Neighborhood Farmers Market</h3>
+          </section> -->
+    </div>
+</div>
+<script type="text/javascript">
+
+// //layers
+  var layers = {
+    layer1: {
+      layer: L.tileLayer('PortlandTiles/{z}/{x}/{y}.png')
+    }};
+//
+//   //scene
+    var scene ={
+      scene1: {lat: 45.536, lng: -122.610, zoom: 11.00, layers: ['layer1'], name: "scene1"}
+    };
+</script>
+</body>
+</html>
