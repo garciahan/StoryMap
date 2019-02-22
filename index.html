@@ -28,7 +28,7 @@
     <!--leaflet.ajax for asynchronously adding geojson data-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
     <!--story map plugin-->
-    <script src="../../storymap.2.3.js"></script>
+    <script src="../../dist/storymap.2.3.js"></script>
 </head>
 <body>
 <body>
@@ -130,6 +130,24 @@
     var scene ={
       scene1: {lat: 45.536, lng: -122.610, zoom: 11.00, layers: ['layer1'], name: "scene1"}
     };
+
+    $('#storymap').storymap({
+        scenes: scene,
+        layers: layers,
+        baselayer: layers.layer1,
+        loader: true,
+        flyto: true,
+        credits: "Hannah Garcia",
+        scalebar: true,
+        scrolldown: false,
+        progressline: true,
+        navwidget: true,
+        createMap: function () {
+            var map = L.map($(".storymap-map")[0], {zoomControl: false}).setView([45, -122], 10);
+            basemap = this.baselayer.layer.addTo(map);
+            return map;
+        }
+    });
 </script>
 </body>
 </html>
