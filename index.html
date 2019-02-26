@@ -4,31 +4,24 @@
     <title>Farmers Market In Portland</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--add required stylesheets-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin="">
-    <!--make sure you add bootstrap 3.3.7 rather than 4.0.0-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <!--leaflet css-->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css">
-    <!--animation-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <!--Google Font-->
     <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../../dist/storymap.2.3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
 
-    <!--add required libraries-->
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
-    <!--leaflet-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js"></script>
-    <!--jquery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!--boostrap-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!--leaflet.ajax for asynchronously adding geojson data-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
-    <!--story map plugin-->
     <script src="../../dist/storymap.2.3.js"></script>
+
 </head>
 <body>
 <body>
@@ -36,12 +29,12 @@
     <div class="row">
         <div class="col-sm-6 col-md-8 storymap-map"></div>
         <div class="col-sm-6 col-md-4 storymap-story">
-        <h2 class="page-header"> Portland Farmers Market<br/>
+        <h2 class="page-header"><br/>
           <section data-scene="scene1">
             <h3>Portland Farmers Markets</h3>
           </section>
 
-          <section data-scene="Market1">
+          <!-- <section data-scene="Market1">
             <h3>Hillsdale Farmers Market</h3>
           </section>
 
@@ -119,31 +112,38 @@
     </div>
 </div>
 <script type="text/javascript">
+//layers
+  var layers= {
+    basemap:{
+      layer:L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ2FyY2lhaGEiLCJhIjoiY2pzMHV3NHdkMWJ5ZDQ5bW4yeTI3djJ4aSJ9.0i83y-pUEPXNAkTlmvEK0Q', {
+                id: 'light'
+              })},
+    markets:{
+      layer:L.geoJson.ajax('assets/farmers_markets.geoJson', {
+                color: 'orange',
+                weight: 5
+              })}
+            };
 
-// //layers
-  var layers = {
-    layer1: {
-      layer: L.tileLayer('PortlandTiles/{z}/{x}/{y}.png')
-    }};
-//
-//   //scene
-    var scene ={
-      scene1: {lat: 45.536, lng: -122.610, zoom: 11.00, layers: ['layer1'], name: "scene1"}
+//scene
+var scene = {
+        scene1: {lat: 45.536, lng: -122.610, zoom: 11.00, layers: ['basemap', 'markets'], name: "scene1"},
+        scene2: {lat: 45.536, lng: -122.610, zoom: 11.00, layers: ['basemap', 'markets'], name: "Market1"},
     };
 
     $('#storymap').storymap({
         scenes: scene,
         layers: layers,
-        baselayer: layers.layer1,
+        baselayer: layers.basemap,
         loader: true,
         flyto: true,
-        credits: "Hannah Garcia",
+        credits: "Hannah Garcia | Basemap |Market Data",
         scalebar: true,
         scrolldown: false,
         progressline: true,
         navwidget: true,
         createMap: function () {
-            var map = L.map($(".storymap-map")[0], {zoomControl: false}).setView([45, -122], 10);
+            var map = L.map($(".storymap-map")[0], {zoomControl: false}).setView([45.5, -122.6], 10);
             basemap = this.baselayer.layer.addTo(map);
             return map;
         }
