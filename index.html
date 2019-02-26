@@ -27,7 +27,6 @@
 <body>
 <div id="storymap" class="container-fluid" >
     <div class="row">
-        <div class="col-sm-6 col-md-8 storymap-map"></div>
         <div class="col-sm-6 col-md-4 storymap-story">
         <h2 class="page-header"><br/>
           <section data-scene="scene1">
@@ -110,14 +109,15 @@
             <h3>Woodlawn Neighborhood Farmers Market</h3>
           </section> -->
     </div>
+    <div class="col-sm-6 col-md-8 storymap-map"></div>
 </div>
 <script type="text/javascript">
 //layers
   var layers= {
     basemap:{
-      layer:L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ2FyY2lhaGEiLCJhIjoiY2pzMHV3NHdkMWJ5ZDQ5bW4yeTI3djJ4aSJ9.0i83y-pUEPXNAkTlmvEK0Q', {
-                id: 'light'
-              })},
+      layer:LtileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ2FyY2lhaGEiLCJhIjoiY2pzMHV3NHdkMWJ5ZDQ5bW4yeTI3djJ4aSJ9.0i83y-pUEPXNAkTlmvEK0Q',{
+          id:'mapbox.light', detectRetina: true
+      })},
     markets:{
       layer:L.geoJson.ajax('assets/farmers_markets.geoJson', {
                 color: 'orange',
@@ -128,7 +128,7 @@
 //scene
 var scene = {
         scene1: {lat: 45.536, lng: -122.610, zoom: 11.00, layers: ['basemap', 'markets'], name: "scene1"},
-        scene2: {lat: 45.536, lng: -122.610, zoom: 11.00, layers: ['basemap', 'markets'], name: "Market1"},
+        scene2: {lat: 45.526, lng: -122.566, zoom: 11.00, layers: ['basemap', 'markets'], name: "Market1"},
     };
 
     $('#storymap').storymap({
