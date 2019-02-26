@@ -1,6 +1,7 @@
 // Modified by Bo Zhao, zhao2@oregonstate.edu
 // Originally obtained from http://atlefren.github.io/storymap/
-// Updated on 05/04/2018 | version 2.4.0 | MIT License
+// Updated on 05/04/2018 | version 2.5.0 | MIT License
+
 
 (function ($) {
 
@@ -46,7 +47,6 @@
                 // L.tileLayer('http://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}@2x.png').addTo(map);
                 return map;
             }
-
         };
 
         var settings = $.extend(defaults, options);
