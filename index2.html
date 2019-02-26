@@ -115,7 +115,7 @@
   var layers= {
     light:{
       layer:L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ2FyY2lhaGEiLCJhIjoiY2pzMHV3NHdkMWJ5ZDQ5bW4yeTI3djJ4aSJ9.0i83y-pUEPXNAkTlmvEK0Q',{
-          id:'mapbox.light', detectRetina: true
+          id:'light', detectRetina: true
       })},
     markets:{
       layer:L.geoJson.ajax('assets/farmers_markets.geoJson', {
@@ -133,17 +133,18 @@ var scene = {
 
     $('#storymap').storymap({
         scenes: scene,
-        layers: layers,
-        baselayer: layers.basemap,
+        baselayer: layers,
+        legend: true,
         loader: true,
-        flyto: true,
-        credits: "Hannah Garcia | Basemap |Market Data",
+        flyto: false,
+        credits:  "",
         scalebar: true,
-        scrolldown: false,
+        scrolldown: true,
         progressline: true,
         navwidget: true,
         createMap: function () {
-            var map = L.map($(".storymap-map")[0], {zoomControl: false}).setView([45.536, -122.610], 12.5);
+            var map = L.map($(".storymap-map")[0], {zoomControl: false}).setView([44, -120], 7);
+            basemap = this.baselayer.layer.addTo(map);
             return map;
         }
     });
