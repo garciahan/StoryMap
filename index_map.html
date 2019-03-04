@@ -57,13 +57,12 @@
 
 
       var layers = {
-          layer1: { layer: L.tileLayer('https://api.mapbox.com/styles/v1/garciaha/cjsaxmiaw0fo01fo4tjmcs3v1/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZ2FyY2lhaGEiLCJhIjoiY2pzMHV3NHdkMWJ5ZDQ5bW4yeTI3djJ4aSJ9.0i83y-pUEPXNAkTlmvEK0Q')},
-          layer2: { layer: L.geoJson.ajax('assets/farmers_markets.geoJson')},
+          layer1: { layer: L.tileLayer('https://api.mapbox.com/styles/v1/garciaha/cjsaxmiaw0fo01fo4tjmcs3v1/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZ2FyY2lhaGEiLCJhIjoiY2pzMHV3NHdkMWJ5ZDQ5bW4yeTI3djJ4aSJ9.0i83y-pUEPXNAkTlmvEK0Q')}
         };
 
       var scenes = {
-          FarmersMarket: {lat: 45.536, lng: -122.610, zoom:  9, layers: ['layer1', 'layer2'], name: 'Portland Farmers Market' },
-          Hillsdale: {lat: 45.478, lng: -122.693, zoom:  12.5, layers: ['layer1', 'layer2'], name: 'Hillsdale Farmers Market'}
+          FarmersMarket: {lat: 45.536, lng: -122.610, zoom:  9, layers: ['layer1'], name: 'Portland Farmers Market' },
+          Hillsdale: {lat: 45.478, lng: -122.693, zoom:  12.5, layers: ['layer1'], name: 'Hillsdale Farmers Market'}
 
       };
 
