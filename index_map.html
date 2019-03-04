@@ -18,7 +18,7 @@
     <!--Font-->
     <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="../../dist/storymap.2.5.css">
+    <link rel="stylesheet" type="text/css" href="dist/storymap.2.5.css">
 
     <!--add required libraries-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
@@ -33,15 +33,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
 
     <!--story map plugin-->
-    <script src="StoryMap/dist/storymap.2.5.js"></script>
+    <script src="dist/storymap.2.5.js"></script>
 </head>
 <body>
-
+<div id= "map"></div>
 <div id="storymap" class="container-fluid">
       <div class="row">
           <div class="col-sm-6 col-md-4 storymap-story">
 
               <section data-scene="FarmersMarket"><h2>Portland Farmers Market</h2> </section>
+              <section data-scene="Hillsdale">
+              <h4>Hillsdale Farmers Market</h4>
+              <p>The Hillsdale farmera market is located... open...</p>
+              </section>
 
           </div>
         <div class="col-sm-6 col-md-8 storymap-map"></div>
@@ -49,28 +53,34 @@
   </div>
   <script type="text/javascript">
 
+// markey symbol
+
+
       var layers = {
-          'layer 1': [L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ2FyY2lhaGEiLCJhIjoiY2pzMHV3NHdkMWJ5ZDQ5bW4yeTI3djJ4aSJ9.0i83y-pUEPXNAkTlmvEK0Q', {id:'light'})],
+          layer1: { layer: L.tileLayer('https://api.mapbox.com/styles/v1/garciaha/cjsaxmiaw0fo01fo4tjmcs3v1/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZ2FyY2lhaGEiLCJhIjoiY2pzMHV3NHdkMWJ5ZDQ5bW4yeTI3djJ4aSJ9.0i83y-pUEPXNAkTlmvEK0Q')},
+          layer2: { layer: L.geoJson.ajax('assets/farmers_markets.geoJson')},
         };
 
       var scenes = {
-          FarmersMarket: {lat: 45.536, lng: -122.610, zoom:  9, layers: ['layer 1']}
+          FarmersMarket: {lat: 45.536, lng: -122.610, zoom:  9, layers: ['layer1', 'layer2'], name: 'Portland Farmers Market' },
+          Hillsdale: {lat: 45.478, lng: -122.693, zoom:  12.5, layers: ['layer1', 'layer2'], name: 'Hillsdale Farmers Market'}
+
       };
 
-
       $('#storymap').storymap({
-          scenes: scenes,
-          baselayer: layers.layer3,
-          navbar: false,
-          legend: false,
-          loader: true,
-          flyto: false,
-          scalebar: true,
-          scrolldown: true,
-          progressline: true,
-          navwidget: true,
+      scenes: scenes,
+      layers: layers,
+      baselayer: layers.layer1,
+      legend: true,
+      loader: true,
+      flyto: true,
+      credits: "Made by Hannah Garcia",
+      scalebar: true,
+      scrolldown: false,
+      progressline: true,
+      navwidget: true,
           createMap: function () {
-              var map = L.map($(".storymap-map")[0], {zoomControl: false}).setView([44.536, -1220.610], 7);
+              var map = L.map($(".storymap-map")[0], {zoomControl: false}).setView([45.536, -122.610], 12.5);
               return map;
           }
       });
