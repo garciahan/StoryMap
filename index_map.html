@@ -4,9 +4,9 @@
     <title>Portland Farmers Market</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!--add required stylesheets-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
     <!--leaflet css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -16,13 +16,12 @@
     <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
 
     <!--Font-->
-    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="dist/storymap.2.5.css">
 
     <!--add required libraries-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
     <!--jquery and Popper-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
@@ -38,46 +37,129 @@
 <body>
 <div id= "map"></div>
 <div id="storymap" class="container-fluid">
-      <div class="row">
-          <div class="col-sm-6 col-md-4 storymap-story">
-
-              <section data-scene="FarmersMarket"><h2>Portland Farmers Market</h2> </section>
-              <section data-scene="Hillsdale">
-              <h4>Hillsdale Farmers Market</h4>
-              <p>The Hillsdale farmera market is located... open...</p>
-              </section>
-
-          </div>
+    <div class="row">
         <div class="col-sm-6 col-md-8 storymap-map"></div>
-      </div>
-  </div>
+        <div class="col-sm-6 col-md-4 storymap-story">
+
+            <section data-scene="scene1">
+              <h2>Portland Farmers Market</h2>
+            </section>
+
+            <section data-scene="scene2">
+              <h2>Hillsdale Farmers Market</h2>
+            </section>
+
+            <section data-scene="scene3">
+            <h2>Hollywood Farmers Market</h2>
+            </section>
+
+            <section data-scene="scene4">
+            <h2>Montavilla Farmers Market</h2>
+            </section>
+
+            <section data-scene="scene5">
+            <h2>Moreland Farmers Market</h2>
+            </section>
+
+            <section data-scene="scene6">
+            <h2><b>People's Farmers Market</b></h2>
+            <h4>put text here</h4>
+            </section>
+
+            <section data-scene="scene7">
+            <h2>Portland Farmers Market at Portland State University</h2>
+            </section>
+
+            <section data-scene="scene8">
+            <h2>Lents International Farmers Market</h2>
+            </section>
+
+            <section data-scene="scene9">
+            <h2>Lloyd Farmers Market</h2>
+            </section>
+
+            <section data-scene="scene10">
+            <h2>OHSU Farmers Market</h2>
+            </section>
+
+            <section data-scene="scene11">
+            <h2>King Portland Farmers Market</h2>
+            </section>
+
+            <section data-scene="scene12">
+            <h2>St Johns Farmers Market</h2>
+            </section>
+
+            <section data-scene="scene13">
+            <h2>Portland Farmers Market at Pioneer Courthouse Square</h2>
+            </section>
+
+            <section data-scene="scene14">
+            <h2>Cully Farmers Market</h2>
+            </section>
+
+            <section data-scene="scene15">
+            <h2>Woodstock Farmers Market</h2>
+            </section>
+
+            <section data-scene="scene16">
+            <h2>South Waterfront Farmers Market</h2>
+            </section>
+
+            <section data-scene="scene17">
+            <h2>Kenton Portland Farmers Market</h2>
+            </section>
+
+            <section data-scene="scene18">
+            <h2>Portland Farmers Market at Shemanski Park</h2>
+            </section>
+
+            <section data-scene="scene19">
+            <h2>Woodlawn Neighborhood Farmers Market</h2>
+            </section>
+        </div>
+    </div>
+</div>
   <script type="text/javascript">
-
-// markey symbol
-
 
       var layers = {
           layer1: { layer: L.tileLayer('https://api.mapbox.com/styles/v1/garciaha/cjsaxmiaw0fo01fo4tjmcs3v1/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZ2FyY2lhaGEiLCJhIjoiY2pzMHV3NHdkMWJ5ZDQ5bW4yeTI3djJ4aSJ9.0i83y-pUEPXNAkTlmvEK0Q')}
         };
 
       var scenes = {
-          FarmersMarket: {lat: 45.536, lng: -122.610, zoom:  9, layers: ['layer1'], name: 'Portland Farmers Market' },
-          Hillsdale: {lat: 45.478, lng: -122.693, zoom:  12.5, layers: ['layer1'], name: 'Hillsdale Farmers Market'}
-
+          scene1: {lat: 45.536, lng: -122.610, zoom:  9, layers: ['layer1'], name: 'Portland Farmers Market' },
+          scene2: {lat: 45.47806, lng: -122.693616, zoom:  12.5, layers: ['layer1'], name: 'Hillsdale Farmers Market'},
+          scene3: {lat: 45.53626, lng: -122.61741, zoom:  12.5, layers: ['layer1'], name: 'Hollywood Farmers Market'},
+          scene4: {lat: 45.51906, lng: -122.57446, zoom:  12.5, layers: ['layer1'], name: 'Montavilla Farmers Market'},
+          scene5: {lat: 45.47403, lng: -122.65152, zoom:  12.5, layers: ['layer1'], name: 'Moreland Farmers Market'},
+          scene6: {lat: 45.50073, lng: -122.64479, zoom:  12.5, layers: ['layer1'], name: 'Peoples Farmers Market'},
+          scene7: {lat: 45.51229, lng: -122.68528, zoom:  12.5, layers: ['layer1'], name: 'Portland Farmers Market at Portland State University'},
+          scene8: {lat: 45.48131, lng: -122.56852, zoom:  12.5, layers: ['layer1'], name: 'Lents International Farmers Market'},
+          scene9: {lat: 45.52977, lng: -122.65748, zoom:  12.5, layers: ['layer1'], name: 'Lloyd Farmers Market'},
+          scene10: {lat: 45.49960, lng: -122.68772, zoom:  12.5, layers: ['layer1'], name: 'OHSU Farmers Market'},
+          scene11: {lat: 45.55723, lng: -122.65877, zoom:  12.5, layers: ['layer1'], name: 'King Portland Farmers Market'},
+          scene12: {lat: 45.59002, lng: -122.75475, zoom:  12.5, layers: ['layer1'], name: 'St Johns Farmers Market'},
+          scene13: {lat: 45.51889, lng: -122.67934, zoom:  12.5, layers: ['layer1'], name: 'Portland Farmers Market at Pioneer Courthouse Square'},
+          scene14: {lat: 45.55913, lng: -122.62060, zoom:  12.5, layers: ['layer1'], name: 'Cully Farmers Market'},
+          scene15: {lat: 45.47879, lng: -122.61521, zoom:  12.5, layers: ['layer1'], name: 'Woodstock Farmers Market'},
+          scene16: {lat: 45.49711, lng: -122.67138, zoom:  12.5, layers: ['layer1'], name: 'South Waterfront Farmers Market'},
+          scene17: {lat: 45.58331, lng: -122.68649, zoom:  12.5, layers: ['layer1'], name: 'Kenton Portland Farmers Market'},
+          scene18: {lat: 45.51691, lng: -122.68235, zoom:  12.5, layers: ['layer1'], name: 'Portland Farmers Market at Shemanski Park'},
+          scene19: {lat: 45.57201, lng: -122.65677, zoom:  12.5, layers: ['layer1'], name: 'Woodlawn Neighborhood Farmers Market'}
       };
 
       $('#storymap').storymap({
-      scenes: scenes,
-      layers: layers,
-      baselayer: layers.layer1,
-      legend: true,
-      loader: true,
-      flyto: true,
-      credits: "Made by Hannah Garcia",
-      scalebar: true,
-      scrolldown: false,
-      progressline: true,
-      navwidget: true,
+          scenes: scenes,
+          baselayer: layers.layer1,
+          legend: true,
+          loader: true,
+          flyto: true,
+          credits:  "Data from City of Portland | Icon from flaticon.com by Smashicons | Made by Hannah Garcia <i class='material-icons' style='color: pink; font-size: 10px;'>favorite</i>",
+          scalebar: true,
+          scrolldown: true,
+          progressline: true,
+          navwidget: true,
+
           createMap: function () {
               var map = L.map($(".storymap-map")[0], {zoomControl: false}).setView([45.536, -122.610], 12.5);
               return map;
