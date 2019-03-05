@@ -35,7 +35,7 @@
     <script src="dist/storymap.2.5.js"></script>
 </head>
 <body>
-<div id= "map"></div>
+<!-- <div id= "map"></div> -->
 <div id="storymap" class="container-fluid">
     <div class="row">
         <div class="col-sm-6 col-md-8 storymap-map"></div>
@@ -127,25 +127,25 @@
         };
 
       var scenes = {
-          scene1: {lat: 45.536, lng: -122.610, zoom:  9, layers: ['layer1'], name: 'Portland Farmers Market' },
-          scene2: {lat: 45.47806, lng: -122.693616, zoom:  12.5, layers: ['layer1'], name: 'Hillsdale Farmers Market'},
-          scene3: {lat: 45.53626, lng: -122.61741, zoom:  12.5, layers: ['layer1'], name: 'Hollywood Farmers Market'},
-          scene4: {lat: 45.51906, lng: -122.57446, zoom:  12.5, layers: ['layer1'], name: 'Montavilla Farmers Market'},
-          scene5: {lat: 45.47403, lng: -122.65152, zoom:  12.5, layers: ['layer1'], name: 'Moreland Farmers Market'},
-          scene6: {lat: 45.50073, lng: -122.64479, zoom:  12.5, layers: ['layer1'], name: 'Peoples Farmers Market'},
-          scene7: {lat: 45.51229, lng: -122.68528, zoom:  12.5, layers: ['layer1'], name: 'Portland Farmers Market at Portland State University'},
-          scene8: {lat: 45.48131, lng: -122.56852, zoom:  12.5, layers: ['layer1'], name: 'Lents International Farmers Market'},
-          scene9: {lat: 45.52977, lng: -122.65748, zoom:  12.5, layers: ['layer1'], name: 'Lloyd Farmers Market'},
-          scene10: {lat: 45.49960, lng: -122.68772, zoom:  12.5, layers: ['layer1'], name: 'OHSU Farmers Market'},
-          scene11: {lat: 45.55723, lng: -122.65877, zoom:  12.5, layers: ['layer1'], name: 'King Portland Farmers Market'},
-          scene12: {lat: 45.59002, lng: -122.75475, zoom:  12.5, layers: ['layer1'], name: 'St Johns Farmers Market'},
-          scene13: {lat: 45.51889, lng: -122.67934, zoom:  12.5, layers: ['layer1'], name: 'Portland Farmers Market at Pioneer Courthouse Square'},
-          scene14: {lat: 45.55913, lng: -122.62060, zoom:  12.5, layers: ['layer1'], name: 'Cully Farmers Market'},
-          scene15: {lat: 45.47879, lng: -122.61521, zoom:  12.5, layers: ['layer1'], name: 'Woodstock Farmers Market'},
-          scene16: {lat: 45.49711, lng: -122.67138, zoom:  12.5, layers: ['layer1'], name: 'South Waterfront Farmers Market'},
-          scene17: {lat: 45.58331, lng: -122.68649, zoom:  12.5, layers: ['layer1'], name: 'Kenton Portland Farmers Market'},
-          scene18: {lat: 45.51691, lng: -122.68235, zoom:  12.5, layers: ['layer1'], name: 'Portland Farmers Market at Shemanski Park'},
-          scene19: {lat: 45.57201, lng: -122.65677, zoom:  12.5, layers: ['layer1'], name: 'Woodlawn Neighborhood Farmers Market'}
+          scene1: {lat: 45.52247, lng: -122.69576, zoom:  12.25, layers: [layers.layer1], name: 'Portland Farmers Market' },
+          scene2: {lat: 45.47806, lng: -122.69361, zoom:  17, layers: [layers.layer1], name: 'Hillsdale Farmers Market'},
+          scene3: {lat: 45.53626, lng: -122.61741, zoom:  17, layers: [layers.layer1], name: 'Hollywood Farmers Market'},
+          scene4: {lat: 45.51906, lng: -122.57446, zoom:  17, layers: [layers.layer1], name: 'Montavilla Farmers Market'},
+          scene5: {lat: 45.47403, lng: -122.65152, zoom:  17, layers: [layers.layer1], name: 'Moreland Farmers Market'},
+          scene6: {lat: 45.50073, lng: -122.64479, zoom:  17, layers: [layers.layer1], name: 'Peoples Farmers Market'},
+          scene7: {lat: 45.51229, lng: -122.68528, zoom:  17, layers: [layers.layer1], name: 'Portland Farmers Market at Portland State University'},
+          scene8: {lat: 45.48131, lng: -122.56852, zoom:  17, layers: [layers.layer1], name: 'Lents International Farmers Market'},
+          scene9: {lat: 45.52977, lng: -122.65748, zoom:  17, layers: [layers.layer1], name: 'Lloyd Farmers Market'},
+          scene10: {lat: 45.49960, lng: -122.68772, zoom: 17, layers: [layers.layer1], name: 'OHSU Farmers Market'},
+          scene11: {lat: 45.55723, lng: -122.65877, zoom: 17, layers: [layers.layer1], name: 'King Portland Farmers Market'},
+          scene12: {lat: 45.59002, lng: -122.75475, zoom: 17, layers: [layers.layer1], name: 'St Johns Farmers Market'},
+          scene13: {lat: 45.51889, lng: -122.67934, zoom: 17, layers: [layers.layer1], name: 'Portland Farmers Market at Pioneer Courthouse Square'},
+          scene14: {lat: 45.55913, lng: -122.62060, zoom: 17, layers: [layers.layer1], name: 'Cully Farmers Market'},
+          scene15: {lat: 45.47879, lng: -122.61521, zoom: 17, layers: [layers.layer1], name: 'Woodstock Farmers Market'},
+          scene16: {lat: 45.49711, lng: -122.67138, zoom: 17, layers: [layers.layer1], name: 'South Waterfront Farmers Market'},
+          scene17: {lat: 45.58331, lng: -122.68649, zoom: 17, layers: [layers.layer1], name: 'Kenton Portland Farmers Market'},
+          scene18: {lat: 45.51691, lng: -122.68235, zoom: 17, layers: [layers.layer1], name: 'Portland Farmers Market at Shemanski Park'},
+          scene19: {lat: 45.57201, lng: -122.65677, zoom: 17, layers: [layers.layer1], name: 'Woodlawn Neighborhood Farmers Market'}
       };
 
       $('#storymap').storymap({
