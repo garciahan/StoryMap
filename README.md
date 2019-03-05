@@ -7,5 +7,5 @@ https://gis-pdx.opendata.arcgis.com/
 
 ADD ^^
 
-Rose by Mickey Godfrey from the Noun Project
-https://thenounproject.com/search/?q=portland&i=604179#
+bridge by PJ Souders from the Noun Project
+https://thenounproject.com/term/portland/10120/
