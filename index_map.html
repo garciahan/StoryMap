@@ -338,7 +338,7 @@ h2 {
         };
 
       var scenes = {
-          scene1: {lat: 45.52247, lng: -122.69576, zoom:  12.25, layers: [layers.layer1], name: 'Portland Farmers Market' },
+          scene1: {lat: 45.52247, lng: -122.69576, zoom:  13, layers: [layers.layer1], name: 'Portland Farmers Market' },
           scene2: {lat: 45.47806, lng: -122.69361, zoom:  18, layers: [layers.layer1], name: 'Hillsdale Farmers Market'},
           scene3: {lat: 45.53626, lng: -122.61741, zoom:  18, layers: [layers.layer1], name: 'Hollywood Farmers Market'},
           scene4: {lat: 45.51906, lng: -122.58446, zoom:  18, layers: [layers.layer1], name: 'Montavilla Farmers Market'},
@@ -372,7 +372,7 @@ h2 {
           navwidget: true,
 
           createMap: function () {
-              var map = L.map($(".storymap-map")[0], {zoomControl: false}).setView([45.536, -122.610], 12.5);
+              var map = L.map($(".storymap-map")[0], {zoomControl: false}).setView([45.536, -122.610], 13);
               return map;
           }
       });
