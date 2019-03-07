@@ -1,4 +1,4 @@
-# :tomato: :corn: StoryMap about Portland Farmers Market :eggplant: :apple:
+# :tomato: :eggplant: StoryMap about Portland Farmers Market :corn: :peach:
 **Link to [story map](https://garciahan.github.io/StoryMap/index_map.html)**
 ### Introduction
 This story map featured farmers markets in Portland, Oregon. This can be a great map for people who want to vizualize all farmers markets and then look at information. TThere are 17 markets and ~19 slides with short text. The information included on each page is a image from the market, opening times, contact info, website links and currency accepted.
